@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoitiente</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th><b>Amount</b></th>
+            <th><b>From Currency</b></th>
+            <th><b>To Currency</b></th>
+        </tr>
+        <tr style="text-align: center">
+            <td>
+                <input type="number" id="nhap" name="nhap"></td>
+            <td>
+                <select id="fromCurrency">
+                    <option value="vnd">Vnđ</option>
+                    <option value="usd">Usd</option>
+                </select>
+            </td>
+            <td>
+                <select id="toCurrency">
+                    <option value="usd">Usd</option>
+                    <option value="vnd">Vnđ</option>
+                </select>
+            </td>
+            <td><input type="button" onclick="convert()" value="convert"></td>
+        </tr>
+    </table>
+</form>
+<p><span id="chuyendoi"></span></p>
+<script>
+    function convert() {
+        let nhap = +(document.getElementById("nhap").value)
+        let to = document.getElementById("toCurrency").value
+        let from = document.getElementById("fromCurrency").value
+        let chuyendoi
+        if (from == "vnd" && to == "usd") {
+            chuyendoi = nhap / 23000
+        } else if (from == "usd" && to == "vnd") {
+            chuyendoi = nhap * 23000
+        } else {
+           chuyendoi= nhap
+        }
+        document.getElementById("chuyendoi").innerHTML = chuyendoi
+    }
+</script>
+</body>
+</html>

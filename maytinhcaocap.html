@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maytinhcaocap</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let namnhuan = parseInt(prompt("số năm"));
+
+    if (namnhuan % 4 == 0)
+        if (namnhuan % 100 == 0)
+            if (namnhuan % 400 == 0)
+                alert(namnhuan + "Năm nhuận")
+             else
+                alert(namnhuan + "Không phải là năm nhuận")
+         else
+            alert(namnhuan + "Năm nhuận")
+    else
+        alert(namnhuan+"Không phải năm nhuận")
+</script>
